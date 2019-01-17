@@ -233,17 +233,17 @@ class Completion:
         for item in self.allColumns:
             score = item.prefixMatchScore(prefix)
             if score:
-                autocompleteList.append(item)
+                autocompleteList.append(item.lower())
 
         for item in self.allTables:
             score = item.prefixMatchScore(prefix)
             if score:
-                autocompleteList.append(item)
+                autocompleteList.append(item.lower())
 
         for item in self.allFunctions:
             score = item.prefixMatchScore(prefix)
             if score:
-                autocompleteList.append(item)
+                autocompleteList.append(item.lower())
 
         if len(autocompleteList) == 0:
             return None
